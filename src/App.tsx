@@ -10,7 +10,7 @@ function App() {
   return (
    <>
    <h1>
-    Expense Tracker
+    Expense tgTracker
    </h1>
    </>
   )
