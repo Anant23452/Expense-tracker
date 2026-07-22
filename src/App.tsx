@@ -1,4 +1,5 @@
 import React from 'react'
+import { Expense } from './types/expense'
 import './App.css'
 
 function App() {
