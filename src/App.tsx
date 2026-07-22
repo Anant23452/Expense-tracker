@@ -6,7 +6,7 @@ function App() {
 
   return (
    <>
-   <h1>
+   <h1 className='bg-blue-600'>
     Expense tgTracker
    </h1>
    </>
