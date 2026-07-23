@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Expense } from './types/expense'
+import type { Expense } from "./types/expense";
 import './App.css'
 
 function App() {
