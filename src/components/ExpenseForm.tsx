@@ -1,6 +1,9 @@
 import React, { useState, type ChangeEvent } from 'react'
 import type { Expense } from '../types/expense';
-export default function ExpenseForm() {
+type ExpnseFormProps={
+  addExpense:(expense:Expense)=>void;
+}
+export default function ExpenseForm({addExpense}:ExpnseFormProps) {
   const [title,setTitle]=useState("");
   const [amount,setAmount]=useState("");
   const [category,setCategory]=useState("")
@@ -20,7 +23,7 @@ export default function ExpenseForm() {
       category,
       date
     }
-    console.log(newExpense)
+    addExpense(newExpense);
   }
   return (
     <>
