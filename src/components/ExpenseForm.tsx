@@ -12,17 +12,18 @@ export default function ExpenseForm() {
   })
   return (
     <>
-   <div className="main flex flex-col justify-center gap-1  items-center 
+   <div className="main flex flex-col justify-center gap-2 items-center 
    ">
-     <div>ExpenseForm</div>
+     <div className='bg-gray-300 p-2 font-bold text-gray-700 '>ExpenseForm</div>
 
-     {/* Title input value  */}
+  <div className="expenses flex gap-4">
+       {/* Title input value  */}
     <input 
     type="text" 
     placeholder='type expenses'
     value={title}
     onChange={handleTitleEvent}
-    className='border-2 rounded p-2'
+    className='border-1 rounded p-1'
 
     />
 
@@ -32,20 +33,24 @@ export default function ExpenseForm() {
     placeholder='Enter Amount'
     value={amount}
     onChange={(e)=>setAmount(e.target.value)}
+     className='border-1 rounded p-1'
     />
     {/* Category input value  */}
     <input type="text"
     placeholder='Enter Category' 
     value={category}
     onChange={(e)=>setCategory(e.target.value)}
+     className='border-1 rounded p-1'
     />
     {/* Date input value  */}
     <input type="text"
     placeholder='Enter Date'
     value={date}
     onChange={(e)=>setDate(e.target.value)}
+     className='border-1 rounded p-1'
     
     />
+  </div>
 
     <p>{title} </p>
    </div>
