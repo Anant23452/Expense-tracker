@@ -12,6 +12,7 @@ export default function ExpenseForm() {
   })
 
   const handleSubmit=()=>{
+    
     const newExpense:Expense={
       id:Date.now(),
       title,
@@ -62,7 +63,11 @@ export default function ExpenseForm() {
     
     />
   </div>
-  <button onClick={handleSubmit}>Add Expense</button>
+  <button
+   onClick={handleSubmit}
+   className='bg-blue-600 p-2 font-bold text-gray-800 hover:bg-blue-500'
+   
+   >Add Expense</button>
 
     <p>{title} </p>
    </div>
