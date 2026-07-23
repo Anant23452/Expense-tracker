@@ -5,6 +5,7 @@ import ExpenseForm from './components/ExpenseForm';
 
 function App() {
  const [expenses, setExpenses] = useState<Expense[]>([]);
+//  callback functin 
  const addExpense =(expense:Expense)=>{
   setExpenses((prev)=>[...prev,expense])
  }
