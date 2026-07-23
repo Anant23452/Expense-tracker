@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, type ChangeEvent } from 'react'
 
 export default function ExpenseForm() {
   const [title,setTitle]=useState("");
+  const handleTitleEvent=((
+    e: React.ChangeEvent<HTMLInputElement>
+    )=>{
+    setTitle(e.target.value)
+  })
   return (
     <>
    <div className="main flex flex-col justify-center gap-1  items-center 
@@ -12,7 +17,7 @@ export default function ExpenseForm() {
     type="text" 
     placeholder='type expenses'
     value={title}
-    onChange={(e)=>setTitle(e.target.value)}
+    onChange={handleTitleEvent}
     className='border-2 rounded p-2'
 
     />
