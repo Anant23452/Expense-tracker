@@ -51,6 +51,7 @@ export default function ExpenseForm() {
     
     />
   </div>
+  <button>Add Expense</button>
 
     <p>{title} </p>
    </div>
