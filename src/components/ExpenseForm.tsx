@@ -2,6 +2,9 @@ import React, { useState, type ChangeEvent } from 'react'
 
 export default function ExpenseForm() {
   const [title,setTitle]=useState("");
+  const [amount,setAmount]=useState();
+  const [category,setCategory]=useState("")
+  const [date,setDate] =useState("");
   const handleTitleEvent=((
     e: React.ChangeEvent<HTMLInputElement>
     )=>{
