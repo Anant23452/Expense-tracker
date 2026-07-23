@@ -7,7 +7,9 @@ function App() {
  const [expenses, setExpenses] = useState<Expense[]>([]);
 //  callback functin 
  const addExpense =(expense:Expense)=>{
+  console.log(expense)
   setExpenses((prev)=>[...prev,expense])
+  console.log(expenses);
  }
 
   return (
