@@ -32,8 +32,21 @@ export default function ExpenseForm() {
     placeholder='Enter Amount'
     value={amount}
     onChange={(e)=>setAmount(e.target.value)}
+    />
+    {/* Category input value  */}
+    <input type="text"
+    placeholder='Enter Category' 
+    value={category}
+    onChange={(e)=>setCategory(e.target.value)}
+    />
+    {/* Date input value  */}
+    <input type="text"
+    placeholder='Enter Date'
+    value={date}
+    onChange={(e)=>setDate(e.target.value)}
     
     />
+
     <p>{title} </p>
    </div>
     </>
