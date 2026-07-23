@@ -1,5 +1,5 @@
 import React, { useState, type ChangeEvent } from 'react'
-
+import type { Expense } from '../types/expense';
 export default function ExpenseForm() {
   const [title,setTitle]=useState("");
   const [amount,setAmount]=useState("");
@@ -10,6 +10,17 @@ export default function ExpenseForm() {
     )=>{
     setTitle(e.target.value)
   })
+
+  const handleSubmit=()=>{
+    const newExpense:Expense={
+      id:Date.now(),
+      title,
+      amount:Number(amount),
+      category,
+      date
+    }
+    console.log(newExpense)
+  }
   return (
     <>
    <div className="main flex flex-col justify-center gap-2 items-center 
@@ -51,7 +62,7 @@ export default function ExpenseForm() {
     
     />
   </div>
-  <button>Add Expense</button>
+  <button onClick={handleSubmit}>Add Expense</button>
 
     <p>{title} </p>
    </div>
