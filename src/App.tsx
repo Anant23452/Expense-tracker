@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useEffect } from "react";
 import type { Expense } from "./types/expense";
 import './App.css'
 import ExpenseForm from './components/ExpenseForm';
@@ -7,10 +8,12 @@ function App() {
  const [expenses, setExpenses] = useState<Expense[]>([]);
 //  callback functin 
  const addExpense =(expense:Expense)=>{
-  console.log(expense)
   setExpenses((prev)=>[...prev,expense])
-  console.log(expenses);
+ 
  }
+ useEffect(() => {
+  console.log(expenses);
+}, [expenses]);
 
   return (
    <>
