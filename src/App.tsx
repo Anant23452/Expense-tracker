@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Expense } from './types/expense'
 import './App.css'
 
