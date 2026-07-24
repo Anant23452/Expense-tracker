@@ -6,7 +6,7 @@ type ExpenseCardProps = {
 
 function ExpenseCard({ expense }: ExpenseCardProps) {
   return (
-    <div className="group relative flex flex-col justify-between p-5 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-slate-200 transition-all duration-200">
+    <div className="group relative flex flex-col justify-between p-5 bg-white rounded-2xl border border-slate-500 shadow-sm  hover:shadow-md hover:border-slate-200 transition-all duration-200">
       {/* Top Header: Title & Category Badge */}
       <div className="flex items-start justify-between gap-3 mb-4">
         <h3 className="font-semibold text-slate-800 text-base leading-tight tracking-tight capitalize group-hover:text-indigo-600 transition-colors">
