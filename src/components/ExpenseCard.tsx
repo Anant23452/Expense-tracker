@@ -10,7 +10,7 @@ type ExpnseFormProps={
             <h3>{expense.title} </h3>
             <p>Rs{expense.amount} </p>
             <p>{expense.category} </p>
-            
+            <p>{expense.date} </p>
         </div>
 
         
