@@ -9,7 +9,7 @@ export default function ExpenseForm({addExpense}:ExpnseFormProps) {
   const [category,setCategory]=useState("")
   const [date,setDate] =useState("");
   const handleTitleEvent=((
-    e: React.ChangeEvent<HTMLInputElement>
+    e:React.ChangeEvent<HTMLInputElement>
     )=>{
     setTitle(e.target.value)
   })
