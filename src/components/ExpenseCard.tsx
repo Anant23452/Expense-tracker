@@ -1,8 +1,8 @@
-import { Expense } from "../types/expense";
-type ExpnseFormProps={
+import type { Expense } from "../types/expense";
+type ExpnseCardProps={
     expense:Expense
 }
- export function ExpenseCard({expense}:ExpnseFormProps){
+ function ExpenseCard({expense}:ExpnseCardProps){
     return(
         <>
         {/* making ui for expenses  */}
@@ -18,3 +18,4 @@ type ExpnseFormProps={
         </>
     )
 }
+export default ExpenseCard;

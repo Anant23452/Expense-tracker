@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import type { Expense } from "./types/expense";
 import './App.css'
 import ExpenseForm from './components/ExpenseForm';
-import { ExpenseCard } from './components/ExpenseCard';
+import ExpenseCard  from './components/ExpenseCard';
 
 function App() {
  const [expenses, setExpenses] = useState<Expense[]>([]);
