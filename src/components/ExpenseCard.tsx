@@ -5,7 +5,7 @@ type ExpenseCardProps={
  function ExpenseCard({expense}:ExpenseCardProps){
     console.log(expense);
     return(
-        <>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto p-4">
         {/* making ui for expenses  */}
        <div className="group relative flex flex-col justify-between p-5 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-slate-200 transition-all duration-200">
       
@@ -40,7 +40,7 @@ type ExpenseCardProps={
 
         
         
-        </>
+        </div>
     )
 }
 export default ExpenseCard;

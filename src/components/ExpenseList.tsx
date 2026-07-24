@@ -8,12 +8,9 @@ type ExpenseListProps = {
 function ExpenseList({ expenses }: ExpenseListProps) {
      console.log("ExpenseList:", expenses);
   return (
-    <div>
+   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto p-4">
       {expenses.map((expense) => (
-        <ExpenseCard
-          key={expense.id}
-          expense={expense}
-        />
+        <ExpenseCard key={expense.id} expense={expense} />
       ))}
     </div>
   );
