@@ -7,7 +7,7 @@ type ExpnseFormProps={
         <>
         {/* making ui for expenses  */}
         <div className="border rounded-lg  p-4 shadow-md mb-3">
-            
+            <h3>{expense.title} </h3>
         </div>
 
         
