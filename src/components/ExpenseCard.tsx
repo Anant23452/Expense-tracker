@@ -1,8 +1,9 @@
 import type { Expense } from "../types/expense";
-type ExpnseCardProps={
+type ExpenseCardProps={
     expense:Expense
 }
- function ExpenseCard({expense}:ExpnseCardProps){
+ function ExpenseCard({expense}:ExpenseCardProps){
+    console.log(expense);
     return(
         <>
         {/* making ui for expenses  */}

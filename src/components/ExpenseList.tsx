@@ -6,6 +6,7 @@ type ExpenseListProps = {
 };
 
 function ExpenseList({ expenses }: ExpenseListProps) {
+     console.log("ExpenseList:", expenses);
   return (
     <div>
       {expenses.map((expense) => (
