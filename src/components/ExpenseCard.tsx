@@ -6,7 +6,10 @@ type ExpnseFormProps={
     return(
         <>
         {/* making ui for expenses  */}
-        
+        <div className="border rounded-lg  p-4 shadow-md mb-3">
+            
+        </div>
+
         
         
         </>
