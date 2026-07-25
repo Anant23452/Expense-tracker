@@ -3,7 +3,7 @@ import ExpenseCard from "./ExpenseCard";
 
 type ExpenseListProps = {
   expenses: Expense[];
-  id:Expense[]
+  deleteExpense:(id:number)=>void;
 };
 
 function ExpenseList({ expenses }: ExpenseListProps) {
