@@ -59,6 +59,7 @@ const updateExpense = (updatedExpense: Expense) => {
    <ExpenseList
     expenses={expenses}
     deleteExpense={deleteExpense}
+    setEditExpense={setEditExpense}
      />
    
    </>
