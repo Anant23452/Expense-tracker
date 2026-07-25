@@ -26,17 +26,25 @@ const deleteExpense =(id:Number)=>{
   setExpenses((prev)=>
   prev.filter((expense)=>expense.id !==id))
 }
+
+
+
+//  updated expense 
+// 1. The function name declares the action. The parameter holds the NEW data.
 const updateExpense = (updatedExpense: Expense) => {
   setExpenses((prev) =>
+    // 2. 'expense' represents the CURRENT item inside the loop
     prev.map((expense) => {
+      // 3. Match the current item's ID with the incoming item's ID
       if (expense.id === updatedExpense.id) {
-        return updatedExpense;
+        return updatedExpense; // Swap the old one out for the NEW one
       }
 
-      return expense;
+      return expense; // Keep the old one unchanged
     })
   );
 };
+
 
   return (
    <>
