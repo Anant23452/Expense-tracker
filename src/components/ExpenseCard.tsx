@@ -34,7 +34,8 @@ function ExpenseCard({ expense,deleteExpense }: ExpenseCardProps) {
           {expense.date}
         </time>
       </div>
-      <button 
+     <div className="carry-button flex justify-center align-center gap-4">
+       <button 
       onClick={() => deleteExpense(expense.id)}
       className="bg-red-400 hover:bg-red-500 text-gray-800 p-2     m-auto border-1 rounded"
       >Delete</button>
@@ -42,6 +43,7 @@ function ExpenseCard({ expense,deleteExpense }: ExpenseCardProps) {
       onClick={() => deleteExpense(expense.id)}
       className="bg-red-400 hover:bg-red-500 text-gray-800 p-2     m-auto border-1 rounded"
       >Edit</button>
+     </div>
     </div>
   );
 }
