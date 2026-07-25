@@ -3,6 +3,7 @@ import ExpenseCard from "./ExpenseCard";
 
 type ExpenseListProps = {
   expenses: Expense[];
+  id:Expense[]
 };
 
 function ExpenseList({ expenses }: ExpenseListProps) {
