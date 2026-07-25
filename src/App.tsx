@@ -8,6 +8,9 @@ import ExpenseList from './components/ExpenseList';
 function App() {
  const [expenses, setExpenses] = useState<Expense[]>([]);
 //  callback functin 
+
+
+// add expensese 
  const addExpense =(expense:Expense)=>{
   setExpenses((prev)=>[...prev,expense])
  
@@ -16,13 +19,23 @@ function App() {
   console.log(expenses);
 }, [expenses]);
 
+
+// delete  expense 
+const deleteExpense =(id:Number)=>{
+  setExpenses((prev)=>
+  prev.filter((expense)=>expense.id !==id))
+}
+
   return (
    <>
    <h1 className='bg-pink-600 '>
     Expense Tracker
    </h1>
-   <ExpenseForm addExpense = {addExpense} />
-   <ExpenseList expenses={expenses} />
+   <ExpenseForm addExpense = {addExpense}  />
+   <ExpenseList
+    expenses={expenses}
+    deleteExpense={deleteExpense}
+     />
    
    </>
   )
