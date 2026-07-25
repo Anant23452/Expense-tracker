@@ -2,8 +2,9 @@ import React, { useState, type ChangeEvent } from 'react'
 import type { Expense } from '../types/expense';
 type ExpnseFormProps={
   addExpense:(expense:Expense)=>void;
+  editingExpense:(editingExpense:Expense)=>null
 }
-export default function ExpenseForm({addExpense}:ExpnseFormProps) {
+export default function ExpenseForm({addExpense,editingExpense}:ExpnseFormProps) {
   const [title,setTitle]=useState("");
   const [amount,setAmount]=useState("");
   const [category,setCategory]=useState("")
@@ -70,7 +71,9 @@ export default function ExpenseForm({addExpense}:ExpnseFormProps) {
    onClick={handleSubmit}
    className='bg-blue-600 p-2 font-bold text-gray-800 hover:bg-blue-500'
    
-   >Add Expense</button>
+   >
+    {editingExpense?"Save Expense":"Add Expense"}
+   </button>
 
     <p>{title} </p>
    </div>
