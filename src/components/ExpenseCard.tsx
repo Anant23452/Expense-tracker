@@ -5,7 +5,7 @@ type ExpenseCardProps = {
   deleteExpense:(id:number)=>void
 };
 
-function ExpenseCard({ expense }: ExpenseCardProps) {
+function ExpenseCard({ expense,deleteExpense }: ExpenseCardProps) {
   return (
     <div className="group relative flex flex-col justify-between p-5 bg-white rounded-2xl border border-slate-500 shadow-sm  hover:shadow-md hover:border-slate-200 transition-all duration-200">
       {/* Top Header: Title & Category Badge */}
