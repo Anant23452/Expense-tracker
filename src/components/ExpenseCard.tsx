@@ -6,7 +6,7 @@ type ExpenseCardProps = {
   setEditExpense:(expense:Expense)=>void
 };
 
-function ExpenseCard({ expense,deleteExpense }: ExpenseCardProps) {
+function ExpenseCard({ expense,deleteExpense,setEditExpense }: ExpenseCardProps) {
   return (
     <div className="group relative flex flex-col justify-between p-5 bg-white rounded-2xl border border-slate-500 shadow-sm  hover:shadow-md hover:border-slate-200 transition-all duration-200">
       {/* Top Header: Title & Category Badge */}
