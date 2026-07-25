@@ -16,6 +16,7 @@ function ExpenseList({ expenses,deleteExpense,setEditExpense }: ExpenseListProps
          key={expense.id} 
          expense={expense}
            deleteExpense={deleteExpense}
+           setEditExpense={setEditExpense}
           />
       ))}
     </div>

@@ -3,6 +3,7 @@ import type { Expense } from "../types/expense";
 type ExpenseCardProps = {
   expense: Expense;
   deleteExpense:(id:number)=>void
+  setEditExpense:(expense:Expense)=>void
 };
 
 function ExpenseCard({ expense,deleteExpense }: ExpenseCardProps) {
@@ -40,7 +41,7 @@ function ExpenseCard({ expense,deleteExpense }: ExpenseCardProps) {
       className="bg-red-400 hover:bg-red-500 text-gray-800 p-2      border-1 rounded"
       >Delete</button>
       <button 
-      onClick={() => deleteExpense(expense.id)}
+     onClick={() => setEditExpense(expense)}
       className="bg-red-400 hover:bg-red-500 text-gray-800 p-2      border-1 rounded"
       >Edit</button>
      </div>
