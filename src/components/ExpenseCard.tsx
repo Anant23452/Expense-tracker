@@ -36,7 +36,7 @@ function ExpenseCard({ expense,deleteExpense }: ExpenseCardProps) {
       </div>
       <button 
       onClick={() => deleteExpense(expense.id)}
-      className="bg-red-400 hover:bg-red-500 text-gray-800 p-2 border-1 rounded"
+      className="bg-red-400 hover:bg-red-500 text-gray-800 p-2     m-auto border-1 rounded"
       >Delete</button>
     </div>
   );
