@@ -6,7 +6,7 @@ type ExpenseListProps = {
   deleteExpense:(id:number)=>void;
 };
 
-function ExpenseList({ expenses }: ExpenseListProps) {
+function ExpenseList({ expenses,deleteExpense }: ExpenseListProps) {
      console.log("ExpenseList:", expenses);
   return (
    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl mx-auto p-4 bg-blue-300">
