@@ -2,6 +2,7 @@ import type { Expense } from "../types/expense";
 
 type ExpenseCardProps = {
   expense: Expense;
+  deleteExpense:(id:number)=>void
 };
 
 function ExpenseCard({ expense }: ExpenseCardProps) {

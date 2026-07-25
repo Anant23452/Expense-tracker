@@ -14,6 +14,7 @@ function ExpenseList({ expenses,deleteExpense }: ExpenseListProps) {
         <ExpenseCard
          key={expense.id} 
          expense={expense}
+           deleteExpense={deleteExpense}
           />
       ))}
     </div>
