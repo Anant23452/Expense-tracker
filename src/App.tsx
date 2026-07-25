@@ -7,6 +7,7 @@ import ExpenseList from './components/ExpenseList';
 
 function App() {
  const [expenses, setExpenses] = useState<Expense[]>([]);
+ const[editingExpense,setEditExpense]=useState<Expense|null>(null);
 //  callback functin 
 
 
@@ -31,7 +32,11 @@ const deleteExpense =(id:Number)=>{
    <h1 className='bg-pink-600 '>
     Expense Tracker
    </h1>
-   <ExpenseForm addExpense = {addExpense}  />
+   <ExpenseForm
+    addExpense = {addExpense}
+    editExpense = {editExpense}
+      />
+
    <ExpenseList
     expenses={expenses}
     deleteExpense={deleteExpense}
