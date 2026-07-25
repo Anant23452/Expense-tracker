@@ -26,6 +26,17 @@ const deleteExpense =(id:Number)=>{
   setExpenses((prev)=>
   prev.filter((expense)=>expense.id !==id))
 }
+const updateExpense = (updatedExpense: Expense) => {
+  setExpenses((prev) =>
+    prev.map((expense) => {
+      if (expense.id === updatedExpense.id) {
+        return updatedExpense;
+      }
+
+      return expense;
+    })
+  );
+};
 
   return (
    <>
@@ -34,7 +45,7 @@ const deleteExpense =(id:Number)=>{
    </h1>
    <ExpenseForm
     addExpense = {addExpense}
-    editingExpense = {editingExpense}
+    updateExpense = {updateExpense}
       />
 
    <ExpenseList
