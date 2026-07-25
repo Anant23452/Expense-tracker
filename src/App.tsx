@@ -34,7 +34,7 @@ const deleteExpense =(id:Number)=>{
    </h1>
    <ExpenseForm
     addExpense = {addExpense}
-    editExpense = {editExpense}
+    editingExpense = {editingExpense}
       />
 
    <ExpenseList
