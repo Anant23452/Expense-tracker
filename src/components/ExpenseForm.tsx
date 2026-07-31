@@ -30,6 +30,7 @@ export default function ExpenseForm({
         date,
       };
      updateExpense(updatedExpense);
+     setEditExpense(null);
     } else {
       const newExpense: Expense = {
         id: Date.now(),
