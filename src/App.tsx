@@ -53,7 +53,9 @@ const updateExpense = (updatedExpense: Expense) => {
    </h1>
    <ExpenseForm
     addExpense = {addExpense}
-    updateExpense = {updateExpense}
+    editingExpense={editingExpense}
+      setEditExpense={setEditExpense}
+      updateExpense={updateExpense}
       />
 
    <ExpenseList
