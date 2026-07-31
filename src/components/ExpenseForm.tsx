@@ -43,20 +43,19 @@ export default function ExpenseForm({
     }
   };
 
-  useEffect(() => {
-    if (editingExpense) {
-      setTitle(editingExpense.title);
-      setAmount(editingExpense.amount.toString());
-      setCategory(editingExpense.category);
-      setDate(editingExpense.date);
-    }else{
-      setTitle(""),
-      setAmount(""),
-      setCategory(""),
-      setDate("")
-      
-    }
-  }, [editingExpense]);
+ useEffect(() => {
+  if (editingExpense) {
+    setTitle(editingExpense.title);
+    setAmount(editingExpense.amount.toString());
+    setCategory(editingExpense.category);
+    setDate(editingExpense.date);
+  } else {
+    setTitle("");
+    setAmount("");
+    setCategory("");
+    setDate("");
+  }
+}, [editingExpense]);
   return (
     <>
       <div
