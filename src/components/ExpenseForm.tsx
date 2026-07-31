@@ -49,6 +49,12 @@ export default function ExpenseForm({
       setAmount(editingExpense.amount.toString());
       setCategory(editingExpense.category);
       setDate(editingExpense.date);
+    }else{
+      setTitle(""),
+      setAmount(""),
+      setCategory(""),
+      setDate("")
+      
     }
   }, [editingExpense]);
   return (
