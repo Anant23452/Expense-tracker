@@ -120,6 +120,7 @@ const validateForm = () => {
             onChange={handleTitleEvent}
             className="border-1 rounded p-1"
           />
+          {errors.title && <p className ="text-red-500">{errors.title}</p>}
 
           {/* //Amount input value  */}
           <input
