@@ -156,27 +156,23 @@ export default function ExpenseForm({
             }}
             className="border-1 rounded p-1"
           />
-          {errors.category && (
-  <p className="text-red-500">{errors.category}</p>
-)}
+          {errors.category && <p className="text-red-500">{errors.category}</p>}
           {/* Date input value  */}
           <input
             type="text"
             placeholder="Enter Date"
             value={date}
-        onChange={(e) => {
-  setDate(e.target.value);
+            onChange={(e) => {
+              setDate(e.target.value);
 
-  setErrors({
-    ...errors,
-    date: "",
-  });
-}}
+              setErrors({
+                ...errors,
+                date: "",
+              });
+            }}
             className="border-1 rounded p-1"
           />
-          {errors.date && (
-  <p className="text-red-500">{errors.date}</p>
-)}
+          {errors.date && <p className="text-red-500">{errors.date}</p>}
         </div>
         <button
           onClick={handleSubmit}
