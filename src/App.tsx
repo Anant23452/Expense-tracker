@@ -46,6 +46,7 @@ const updateExpense = (updatedExpense: Expense) => {
 };
 
 
+
   return (
    <>
    <h1 className='bg-pink-600 '>

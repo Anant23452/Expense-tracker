@@ -16,6 +16,12 @@ export default function ExpenseForm({
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("");
   const [date, setDate] = useState("");
+  const [errors, setErrors] = useState({
+  title: "",
+  amount: "",
+  category: "",
+  date: "",
+});
   const handleTitleEvent = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
@@ -56,6 +62,39 @@ export default function ExpenseForm({
     setDate("");
   }
 }, [editingExpense]);
+
+const validateForm = () => {
+  let isValid = true;
+
+  const newErrors = {
+    title: "",
+    amount: "",
+    category: "",
+    date: "",
+  };
+
+  // validations...
+  if (!title.trim()) {
+  newErrors.title = "Please enter a title";
+  isValid = false;
+}
+ if(!amount.trim()){
+  newErrors.amount="Please enter an amount";
+  isValid=false;
+ }
+ if(!category.trim()){
+  newErrors.category="please enter a category";
+  isValid=false;
+ }
+ if(!date.trim()){
+  newErrors.date="please enter a date";
+  isValid=false;
+ }
+
+  setErrors(newErrors);
+
+  return isValid;
+};
   return (
     <>
       <div
