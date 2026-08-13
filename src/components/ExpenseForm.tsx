@@ -28,6 +28,13 @@ export default function ExpenseForm({
       ...errors,
       title:"",
     })
+
+    //amount
+    setAmount(e.target.value);
+    setErrors({
+      ...errors,
+      amount:""
+    })
   };
 
   const handleSubmit = () => {
