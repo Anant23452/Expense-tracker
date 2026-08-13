@@ -10,35 +10,28 @@ export default function ExpenseForm({
   addExpense,
   editingExpense,
   setEditExpense,
-  updateExpense
+  updateExpense,
 }: ExpnseFormProps) {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("");
   const [date, setDate] = useState("");
   const [errors, setErrors] = useState({
-  title: "",
-  amount: "",
-  category: "",
-  date: "",
-});
+    title: "",
+    amount: "",
+    category: "",
+    date: "",
+  });
   const handleTitleEvent = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
     setErrors({
       ...errors,
-      title:"",
-    })
-
-    //amount
-    setAmount(e.target.value);
-    setErrors({
-      ...errors,
-      amount:""
-    })
+      title: "",
+    });
   };
 
   const handleSubmit = () => {
-    if(!validateForm()){
+    if (!validateForm()) {
       return;
     }
     if (editingExpense) {
@@ -49,8 +42,8 @@ export default function ExpenseForm({
         category,
         date,
       };
-     updateExpense(updatedExpense);
-     setEditExpense(null);
+      updateExpense(updatedExpense);
+      setEditExpense(null);
     } else {
       const newExpense: Expense = {
         id: Date.now(),
@@ -63,55 +56,55 @@ export default function ExpenseForm({
     }
   };
 
- useEffect(() => {
-  if (editingExpense) {
-    setTitle(editingExpense.title);
-    setAmount(editingExpense.amount.toString());
-    setCategory(editingExpense.category);
-    setDate(editingExpense.date);
-  } else {
-    setTitle("");
-    setAmount("");
-    setCategory("");
-    setDate("");
-  }
-}, [editingExpense]);
+  useEffect(() => {
+    if (editingExpense) {
+      setTitle(editingExpense.title);
+      setAmount(editingExpense.amount.toString());
+      setCategory(editingExpense.category);
+      setDate(editingExpense.date);
+    } else {
+      setTitle("");
+      setAmount("");
+      setCategory("");
+      setDate("");
+    }
+  }, [editingExpense]);
 
-const validateForm = () => {
-  let isValid = true;
+  const validateForm = () => {
+    let isValid = true;
 
-  const newErrors = {
-    title: "",
-    amount: "",
-    category: "",
-    date: "",
+    const newErrors = {
+      title: "",
+      amount: "",
+      category: "",
+      date: "",
+    };
+
+    // validations...
+    if (!title.trim()) {
+      newErrors.title = "Please enter a title";
+      isValid = false;
+    }
+    if (!amount.trim()) {
+      newErrors.amount = "Please enter an amount";
+      isValid = false;
+    } else if (Number(amount) <= 0) {
+      newErrors.amount = "Amount must be greater than zero";
+      isValid = false;
+    }
+    if (!category.trim()) {
+      newErrors.category = "please enter a category";
+      isValid = false;
+    }
+    if (!date.trim()) {
+      newErrors.date = "please enter a date";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+
+    return isValid;
   };
-
-  // validations...
-  if (!title.trim()) {
-  newErrors.title = "Please enter a title";
-  isValid = false;
-}
- if(!amount.trim()){
-  newErrors.amount="Please enter an amount";
-  isValid=false;
- }else if(Number(amount)<=0){
-  newErrors.amount="Amount must be greater than zero";
-  isValid=false;
- }
- if(!category.trim()){
-  newErrors.category="please enter a category";
-  isValid=false;
- }
- if(!date.trim()){
-  newErrors.date="please enter a date";
-  isValid=false;
- }
-
-  setErrors(newErrors);
-
-  return isValid;
-};
   return (
     <>
       <div
@@ -131,14 +124,21 @@ const validateForm = () => {
             onChange={handleTitleEvent}
             className="border-1 rounded p-1"
           />
-          {errors.title && <p className ="text-red-500">{errors.title}</p>}
+          {errors.title && <p className="text-red-500">{errors.title}</p>}
 
           {/* //Amount input value  */}
           <input
             type="number"
             placeholder="Enter Amount"
             value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            onChange={(e) => {
+              setAmount(e.target.value);
+
+              setErrors({
+                ...errors,
+                amount: "",
+              });
+            }}
             className="border-1 rounded p-1"
           />
           {/* Category input value  */}
