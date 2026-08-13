@@ -24,6 +24,10 @@ export default function ExpenseForm({
 });
   const handleTitleEvent = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
+    setErrors({
+      ...errors,
+      title:"",
+    })
   };
 
   const handleSubmit = () => {
