@@ -141,6 +141,7 @@ export default function ExpenseForm({
             }}
             className="border-1 rounded p-1"
           />
+          {errors.amount && <p className="text-red-500">{errors.amount}</p>}
           {/* Category input value  */}
           <input
             type="text"
