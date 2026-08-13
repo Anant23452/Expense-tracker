@@ -164,7 +164,14 @@ export default function ExpenseForm({
             type="text"
             placeholder="Enter Date"
             value={date}
-            onChange={(e) => setDate(e.target.value)}
+        onChange={(e) => {
+  setDate(e.target.value);
+
+  setErrors({
+    ...errors,
+    date: "",
+  });
+}}
             className="border-1 rounded p-1"
           />
         </div>
