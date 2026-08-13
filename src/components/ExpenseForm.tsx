@@ -174,6 +174,9 @@ export default function ExpenseForm({
 }}
             className="border-1 rounded p-1"
           />
+          {errors.date && (
+  <p className="text-red-500">{errors.date}</p>
+)}
         </div>
         <button
           onClick={handleSubmit}
