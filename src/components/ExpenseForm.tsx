@@ -27,6 +27,9 @@ export default function ExpenseForm({
   };
 
   const handleSubmit = () => {
+    if(!validateForm()){
+      return;
+    }
     if (editingExpense) {
       const updatedExpense: Expense = {
         id: editingExpense.id,
