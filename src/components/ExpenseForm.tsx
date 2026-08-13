@@ -81,6 +81,9 @@ const validateForm = () => {
  if(!amount.trim()){
   newErrors.amount="Please enter an amount";
   isValid=false;
+ }else if(Number(amount)<=0){
+  newErrors.amount="Amount must be greater than zero";
+  isValid=false;
  }
  if(!category.trim()){
   newErrors.category="please enter a category";
