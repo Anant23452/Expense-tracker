@@ -146,7 +146,14 @@ export default function ExpenseForm({
             type="text"
             placeholder="Enter Category"
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) => {
+              setCategory(e.target.value);
+
+              setErrors({
+                ...errors,
+                category: "",
+              });
+            }}
             className="border-1 rounded p-1"
           />
           {/* Date input value  */}
