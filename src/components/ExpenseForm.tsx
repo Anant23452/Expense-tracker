@@ -156,6 +156,9 @@ export default function ExpenseForm({
             }}
             className="border-1 rounded p-1"
           />
+          {errors.category && (
+  <p className="text-red-500">{errors.category}</p>
+)}
           {/* Date input value  */}
           <input
             type="text"
