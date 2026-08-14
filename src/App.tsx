@@ -68,7 +68,9 @@ const updateExpense = (updatedExpense: Expense) => {
     Expense Tracker
    </h1>
    <span className='p-4 my-2 bg-yellow-500 text-gray-800 mx-auto'>Total Expenses: ₹{totalExpenses}</span>
-    
+    <select value={selectedCategory} onChange={(e)=>setselectedCategory(e.target.value)} >
+      
+    </select>
    <ExpenseForm
     addExpense = {addExpense}
     editingExpense={editingExpense}
