@@ -8,7 +8,7 @@ import ExpenseList from './components/ExpenseList';
 function App() {
  const [expenses, setExpenses] = useState<Expense[]>([]);
  const[editingExpense,setEditExpense]=useState<Expense|null>(null);
- const
+ const [selected]
 //  callback functin 
 
 
