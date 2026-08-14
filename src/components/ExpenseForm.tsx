@@ -105,6 +105,9 @@ export default function ExpenseForm({
 
     return isValid;
   };
+
+  //calculationg total expenses
+  
   return (
     <>
       <div
