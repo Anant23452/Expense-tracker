@@ -62,6 +62,11 @@ const updateExpense = (updatedExpense: Expense) => {
       "All",
       ...new Set(expenses.map((expense)=>expense.category))
     ]
+
+    ///expense summary 
+    const NoofItem=expenses.length;
+    const totalAmount=totalExpenses;
+    const averageAmount=NoofItem>0?totalAmount/NoofItem:0;
   return (
    <>
    <h1 className='bg-pink-600 '>
