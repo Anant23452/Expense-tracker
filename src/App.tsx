@@ -69,10 +69,9 @@ const updateExpense = (updatedExpense: Expense) => {
    </h1>
    <span className='p-4 my-2 bg-yellow-500 text-gray-800 mx-auto'>Total Expenses: ₹{totalExpenses}</span>
     <select value={selectedCategory} onChange={(e)=>setselectedCategory(e.target.value)} >
-      <option value="All">All</option>
-      <option value="Food">Food</option>
-      <option value="travel">Travel</option>
-      <option value="movie">Movie</option>
+      {categories.map((category)=>(
+        <option value={category} key={category}>{category}</option>
+      ))}
     </select>
    <ExpenseForm
     addExpense = {addExpense}
