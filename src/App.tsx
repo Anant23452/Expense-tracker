@@ -76,6 +76,7 @@ const updateExpense = (updatedExpense: Expense) => {
    </h1>
    <div className="category mx-2   flex justify-between items-center">
     <span className='p-4  bg-yellow-500 text-gray-800 '>Total Expenses: ₹{totalExpenses}</span>
+    <p>Average Expense: ₹{averageExpense}</p>
     <select className='p-2 bg-gray-200' value={selectedCategory} onChange={(e)=>setselectedCategory(e.target.value)} >
       {categories.map((category)=>(
         <option value={category} key={category}>{category}</option>
