@@ -8,6 +8,7 @@ import ExpenseList from './components/ExpenseList';
 function App() {
  const [expenses, setExpenses] = useState<Expense[]>([]);
  const[editingExpense,setEditExpense]=useState<Expense|null>(null);
+ const
 //  callback functin 
 
 
@@ -48,7 +49,13 @@ const updateExpense = (updatedExpense: Expense) => {
 //calculationg total expenses
   const totalExpenses = expenses.reduce((sum,expenses)=>{
     return sum + expenses.amount;
-  },0)
+  },0) 
+
+  // /filter expensese 
+  const filteredExpenses =
+  selectedCategory === "All"
+    ? expenses
+    : expenses.filter((expense) => expense.category === selectedCategory);
 
   return (
    <>
