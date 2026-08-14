@@ -64,9 +64,11 @@ const updateExpense = (updatedExpense: Expense) => {
     ]
 
     ///expense summary 
-    const NoofItem=expenses.length;
     const totalAmount=totalExpenses;
-    const averageAmount=NoofItem>0?totalAmount/NoofItem:0;
+   const averageExpense =
+  expenses.length === 0
+    ? 0
+    : totalAmount / expenses.length;
   return (
    <>
    <h1 className='bg-pink-600 '>
