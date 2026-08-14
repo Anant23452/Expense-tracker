@@ -67,9 +67,9 @@ const updateExpense = (updatedExpense: Expense) => {
    <h1 className='bg-pink-600 '>
     Expense Tracker
    </h1>
-   <div className="category bg-gray-200  flex justify-between items-center">
+   <div className="category mx-2   flex justify-between items-center">
     <span className='p-4  bg-yellow-500 text-gray-800 '>Total Expenses: ₹{totalExpenses}</span>
-    <select value={selectedCategory} onChange={(e)=>setselectedCategory(e.target.value)} >
+    <select className='p-2 bg-gray-200' value={selectedCategory} onChange={(e)=>setselectedCategory(e.target.value)} >
       {categories.map((category)=>(
         <option value={category} key={category}>{category}</option>
       ))}
