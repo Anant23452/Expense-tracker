@@ -55,7 +55,7 @@ const updateExpense = (updatedExpense: Expense) => {
    <h1 className='bg-pink-600 '>
     Expense Tracker
    </h1>
-   <p className='p-4 bg-yellow-500 text-white-800 inline-block'>Total Expenses: ₹{totalExpenses}</p>
+   <span className='p-4 my-2 bg-yellow-500 text-gray-800 mx-auto'>Total Expenses: ₹{totalExpenses}</span>
    <ExpenseForm
     addExpense = {addExpense}
     editingExpense={editingExpense}
