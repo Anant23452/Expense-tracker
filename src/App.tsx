@@ -57,12 +57,18 @@ const updateExpense = (updatedExpense: Expense) => {
     ? expenses
     : expenses.filter((expense) => expense.category === selectedCategory);
 
+    //use of set
+    const categories =[
+      "All",
+      ...new Set(expenses.map((expense)=>expense.category))
+    ]
   return (
    <>
    <h1 className='bg-pink-600 '>
     Expense Tracker
    </h1>
    <span className='p-4 my-2 bg-yellow-500 text-gray-800 mx-auto'>Total Expenses: ₹{totalExpenses}</span>
+    
    <ExpenseForm
     addExpense = {addExpense}
     editingExpense={editingExpense}
