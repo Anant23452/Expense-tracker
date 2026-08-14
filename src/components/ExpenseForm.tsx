@@ -107,7 +107,10 @@ export default function ExpenseForm({
   };
 
   //calculationg total expenses
-  
+  const Total = expenses.reduce((sum,expenses)=>{
+    return sum + expenses.amount;
+  },0)
+
   return (
     <>
       <div
