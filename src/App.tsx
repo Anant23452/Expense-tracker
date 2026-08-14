@@ -45,7 +45,10 @@ const updateExpense = (updatedExpense: Expense) => {
   );
 };
 
-
+//calculationg total expenses
+  const totalExpenses = expenses.reduce((sum,expenses)=>{
+    return sum + expenses.amount;
+  },0)
 
   return (
    <>
