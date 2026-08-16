@@ -30,18 +30,18 @@ export default function ExpenseForm({
     });
   };
   const resetForm = () => {
-  setTitle("");
-  setAmount("");
-  setCategory("");
-  setDate("");
+    setTitle("");
+    setAmount("");
+    setCategory("");
+    setDate("");
 
-  setErrors({
-    title: "",
-    amount: "",
-    category: "",
-    date: "",
-  });
-};
+    setErrors({
+      title: "",
+      amount: "",
+      category: "",
+      date: "",
+    });
+  };
 
   const handleSubmit = () => {
     if (!validateForm()) {
@@ -66,10 +66,8 @@ export default function ExpenseForm({
         date,
       };
       addExpense(newExpense);
-// Reset the form fields after adding the expense
+      // Reset the form fields after adding the expense
       resetForm();
-
-
     }
   };
 
@@ -119,8 +117,6 @@ export default function ExpenseForm({
 
     return isValid;
   };
-
-  
 
   return (
     <>
@@ -197,6 +193,15 @@ export default function ExpenseForm({
           className="bg-blue-600 p-2 font-bold text-gray-800 hover:bg-blue-500"
         >
           {editingExpense ? "Save Expense" : "Add Expense"}
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            setEditExpense(null);
+            resetForm();
+          }}
+        >
+          Cancel
         </button>
 
         <p>{title} </p>
