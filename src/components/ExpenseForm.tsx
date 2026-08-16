@@ -66,20 +66,10 @@ export default function ExpenseForm({
         date,
       };
       addExpense(newExpense);
+// Reset the form fields after adding the expense
+      resetForm();
 
 
-      // reset form here 
-      setTitle("");
-setAmount("");
-setCategory("");
-setDate("");
-
-setErrors({
-  title: "",
-  amount: "",
-  category: "",
-  date: "",
-});
     }
   };
 
