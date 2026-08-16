@@ -80,10 +80,7 @@ export default function ExpenseForm({
       setCategory(editingExpense.category);
       setDate(editingExpense.date);
     } else {
-      setTitle("");
-      setAmount("");
-      setCategory("");
-      setDate("");
+      resetForm();
     }
   }, [editingExpense]);
 
