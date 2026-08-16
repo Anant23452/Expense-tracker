@@ -46,10 +46,7 @@ const updateExpense = (updatedExpense: Expense) => {
   );
 };
 
-//calculationg total expenses
-  const totalExpenses = expenses.reduce((sum,expenses)=>{
-    return sum + expenses.amount;
-  },0) 
+
 
   // /filter expensese 
   const filteredExpenses =
@@ -62,13 +59,17 @@ const updateExpense = (updatedExpense: Expense) => {
       "All",
       ...new Set(expenses.map((expense)=>expense.category))
     ]
+    //calculationg total expenses
+  const totalExpenses = filteredExpenses.reduce((sum,expenses)=>{
+    return sum + expenses.amount;
+  },0) 
 
     ///expense summary 
     const totalAmount=totalExpenses;
    const averageExpense =
-  expenses.length === 0
+  filteredExpenses.length === 0
     ? 0
-    : totalAmount / expenses.length;
+    : totalAmount / filteredExpenses.length;
   return (
    <>
    <h1 className='bg-pink-600 '>
