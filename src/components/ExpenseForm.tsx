@@ -53,6 +53,20 @@ export default function ExpenseForm({
         date,
       };
       addExpense(newExpense);
+
+
+      // reset form here 
+      setTitle("");
+setAmount("");
+setCategory("");
+setDate("");
+
+setErrors({
+  title: "",
+  amount: "",
+  category: "",
+  date: "",
+});
     }
   };
 
