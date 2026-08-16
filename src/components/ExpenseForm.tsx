@@ -29,15 +29,19 @@ export default function ExpenseForm({
       title: "",
     });
   };
-  const resetForm =()=>{
-    setTitle("")
-    setAmount("")
-    setCategory("")
-    setDate("")
-    setError({
-      
-    })
-  }
+  const resetForm = () => {
+  setTitle("");
+  setAmount("");
+  setCategory("");
+  setDate("");
+
+  setErrors({
+    title: "",
+    amount: "",
+    category: "",
+    date: "",
+  });
+};
 
   const handleSubmit = () => {
     if (!validateForm()) {
