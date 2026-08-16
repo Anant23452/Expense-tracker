@@ -173,7 +173,7 @@ export default function ExpenseForm({
           {errors.category && <p className="text-red-500">{errors.category}</p>}
           {/* Date input value  */}
           <input
-            type="text"
+            type="date"
             placeholder="Enter Date"
             value={date}
             onChange={(e) => {
