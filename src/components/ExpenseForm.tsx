@@ -29,6 +29,15 @@ export default function ExpenseForm({
       title: "",
     });
   };
+  const resetForm =()=>{
+    setTitle("")
+    setAmount("")
+    setCategory("")
+    setDate("")
+    setError({
+      
+    })
+  }
 
   const handleSubmit = () => {
     if (!validateForm()) {
