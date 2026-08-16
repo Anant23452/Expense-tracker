@@ -188,13 +188,21 @@ export default function ExpenseForm({
           />
           {errors.date && <p className="text-red-500">{errors.date}</p>}
         </div>
-        <button
+
+
+
+        <div className="button-class flex gap-4">
+
+          <button
           onClick={handleSubmit}
           className="bg-blue-600 p-2 font-bold text-gray-800 hover:bg-blue-500"
         >
           {editingExpense ? "Save Expense" : "Add Expense"}
         </button>
+
+        {/* cancel button  */}
         <button
+        className="bg-red-500 p-2 text-gray-700 font-bold hover:bg-red-400 "
           type="button"
           onClick={() => {
             setEditExpense(null);
@@ -203,6 +211,7 @@ export default function ExpenseForm({
         >
           Cancel
         </button>
+        </div>
 
         <p>{title} </p>
       </div>
