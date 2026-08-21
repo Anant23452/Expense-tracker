@@ -62,7 +62,7 @@ function App() {
   const averageExpense =
     filteredExpenses.length === 0 ? 0 : totalAmount / filteredExpenses.length;
 
-    
+
 //sort expenses
   const SortedExpenses=[...filteredExpenses].sort((a,b)=>{
     if(sortBy==="newest"){
@@ -79,6 +79,9 @@ function App() {
       return a.amount-b.amount;
     }
   })
+
+  //save  Expenses in localStorage;
+  const savedExpenses = localStorage.getItem("expenses");
   return (
     <>
       <h1 className="bg-pink-600 ">Expense Tracker</h1>
