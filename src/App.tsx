@@ -62,6 +62,8 @@ function App() {
   const averageExpense =
     filteredExpenses.length === 0 ? 0 : totalAmount / filteredExpenses.length;
 
+    
+//sort expenses
   const SortedExpenses=[...filteredExpenses].sort((a,b)=>{
     if(sortBy==="newest"){
       return new Date(b.date).getDate()-new Date(a.date).getDate();
