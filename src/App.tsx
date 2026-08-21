@@ -123,7 +123,7 @@ function App() {
       />
 
       <ExpenseList
-        expenses={filteredExpenses}
+        expenses={SortedExpenses}
         deleteExpense={deleteExpense}
         setEditExpense={setEditExpense}
       />
