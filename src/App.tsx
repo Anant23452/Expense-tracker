@@ -61,6 +61,22 @@ function App() {
   const totalAmount = totalExpenses;
   const averageExpense =
     filteredExpenses.length === 0 ? 0 : totalAmount / filteredExpenses.length;
+
+  const SortedExpenses=[...filteredExpenses].sort((a,b)=>{
+    if(sortBy==="newest"){
+      return new Date(b.date).getDate()-new Date(a.date).getDate();
+    }
+    if(sortBy==="oldest"){
+      return new Date(a.date).getDate()- new Date(b.date).getDate();
+    }
+    if(sortBy==="higherAmt"){
+      return b.amount-a.amount;
+
+    }
+    if(sortBy==="lowerAmt"){
+      return a.amount-b.amount;
+    }
+  })
   return (
     <>
       <h1 className="bg-pink-600 ">Expense Tracker</h1>
