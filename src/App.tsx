@@ -81,7 +81,11 @@ function App() {
   })
 
   //save  Expenses in localStorage;
-  const savedExpenses = localStorage.getItem("expenses");
+  // when app started we load the stored data 
+  useEffect(()=>{
+    const savedExpenses = localStorage.getItem("expenses");
+    
+  })
   return (
     <>
       <h1 className="bg-pink-600 ">Expense Tracker</h1>
