@@ -6,7 +6,11 @@ import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 
 function App() {
-  const [expenses, setExpenses] = useState<Expense[]>([]);
+  const [expenses, setExpenses] = useState<Expense[]>(()=>{
+    const savedExpenses = localStorage.getItem("expenses");
+    return savedExpenses ? JSON.parse(savedExpenses):[];
+
+  });
   const [editingExpense, setEditExpense] = useState<Expense | null>(null);
   const [selectedCategory, setselectedCategory] = useState("All");
   const [sortBy, setSortBy] = useState("newest");
@@ -82,13 +86,7 @@ function App() {
 
   //save  Expenses in localStorage;
   // when app started we load the stored data 
-  useEffect(()=>{
-    const savedExpenses = localStorage.getItem("expenses");
-    if(savedExpenses){
-      setExpenses(JSON.parse(savedExpenses));
-    }
-
-  },[])
+  
   //save when expenses changes
   useEffect(()=>{
     localStorage.setItem("expenses",JSON.stringify(expenses))
