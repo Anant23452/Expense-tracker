@@ -84,8 +84,15 @@ function App() {
   // when app started we load the stored data 
   useEffect(()=>{
     const savedExpenses = localStorage.getItem("expenses");
-    
-  })
+    if(savedExpenses){
+      setExpenses(JSON.parse(savedExpenses));
+    }
+
+  },[])
+  //save when expenses changes
+  useEffect(()=>{
+    localStorage.setItem("expenses",JSON.stringify(expenses))
+  },[expenses]);
   return (
     <>
       <h1 className="bg-pink-600 ">Expense Tracker</h1>
