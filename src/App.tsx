@@ -9,6 +9,7 @@ function App() {
  const [expenses, setExpenses] = useState<Expense[]>([]);
  const[editingExpense,setEditExpense]=useState<Expense|null>(null);
  const [selectedCategory,setselectedCategory]=useState("All");
+ const [sortBy,setSortBy]=useState("newest");
 //  callback functin 
 
 
@@ -78,11 +79,22 @@ const updateExpense = (updatedExpense: Expense) => {
    <div className="category mx-2   flex justify-between items-center">
     <span className='p-4  bg-yellow-500 text-gray-800 '>Total Expenses: ₹{totalExpenses}</span>
     <p className='bg-pink-400 p-2 text-black'>Average Expense: ₹{averageExpense.toFixed(2)}</p>
+
+    {/* /this select is uncontrolled component because it does not have a value prop that is tied to state. To make it controlled, you can add a value prop that is tied to the selectedCategory state variable and update the state when the user selects a new category. */}
     <select className='p-2 bg-gray-200' value={selectedCategory} onChange={(e)=>setselectedCategory(e.target.value)} >
       {categories.map((category)=>(
         <option value={category} key={category}>{category}</option>
       ))}
     </select>
+    {/* making second  dropdown with controlled select 
+     */}
+
+     <select name="" id="" value={sortBy} onChange={(e)=>setSortBy(e.target.value)}>
+      <option value="newest">Newest</option>
+      <option value="oldest">Oldest</option>
+      <option value="higherAmt">Higher Amount</option>
+      <option value="lowerAmt">Lower Amount</option>
+     </select>
    </div>
    <ExpenseForm
     addExpense = {addExpense}
