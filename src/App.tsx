@@ -302,16 +302,27 @@ function App() {
         />
       </div>
 
-      {/* Static category  */}
+      {/* Static category Summary */}
 
       <div className="flex gap-4 justify-center items-center">
         <h2>Category Summary</h2>
 
-        {Object.entries(categoryTotals).map(([category, total]) => (
-          <div key={category}>
-            {category}: ₹{total}
-          </div>
-        ))}
+       {Object.entries(categoryTotals).map(([category, total]) => {
+  const width = (total / totalExpenses) * 100;
+
+  return (
+    <div key={category}>
+      <p>{category}: ₹{total}</p>
+
+      <div className="w-full bg-gray-200 h-4 rounded">
+        <div
+          className="bg-blue-500 h-4 rounded"
+          style={{ width: `${width}%` }}
+        />
+      </div>
+    </div>
+  );
+})}
       </div>
 
 
