@@ -6,11 +6,19 @@ import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 
 function App() {
-  const [expenses, setExpenses] = useState<Expense[]>(()=>{
-    const savedExpenses = localStorage.getItem("expenses");
-    return savedExpenses ? JSON.parse(savedExpenses):[];
+  const [expenses, setExpenses] = useState<Expense[]>(() => {
+  const savedExpenses = localStorage.getItem("expenses");
 
-  });
+  if (!savedExpenses) {
+    return [];
+  }
+
+  try {
+    return JSON.parse(savedExpenses);
+  } catch {
+    return [];
+  }
+});
   const [editingExpense, setEditExpense] = useState<Expense | null>(null);
   const [selectedCategory, setselectedCategory] = useState("All");
   const [sortBy, setSortBy] = useState("newest");
