@@ -71,7 +71,7 @@ function App() {
   const totalExpenses = filteredExpenses.reduce((sum, expenses) => {
     return sum + expenses.amount;
   }, 0);
-
+const totalTransaction = filteredExpenses.length;
   ///expense summary
   const totalAmount = totalExpenses;
   const averageExpense =
