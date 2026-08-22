@@ -25,11 +25,9 @@ function App() {
     }
   });
 
-  const [editingExpense, setEditExpense] =
-    useState<Expense | null>(null);
+  const [editingExpense, setEditExpense] = useState<Expense | null>(null);
 
-  const [selectedCategory, setSelectedCategory] =
-    useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const [sortBy, setSortBy] = useState("newest");
 
@@ -37,8 +35,7 @@ function App() {
 
   const [showModal, setShowModal] = useState(false);
 
-  const [expenseToDelete, setExpenseToDelete] =
-    useState<Expense | null>(null);
+  const [expenseToDelete, setExpenseToDelete] = useState<Expense | null>(null);
 
   const [selectedMonth, setSelectedMonth] = useState("");
 
@@ -55,9 +52,7 @@ function App() {
   // =========================
 
   const deleteExpense = (id: number) => {
-    setExpenses((prev) =>
-      prev.filter((expense) => expense.id !== id)
-    );
+    setExpenses((prev) => prev.filter((expense) => expense.id !== id));
   };
 
   // =========================
@@ -72,7 +67,7 @@ function App() {
         }
 
         return expense;
-      })
+      }),
     );
   };
 
@@ -83,71 +78,56 @@ function App() {
   const filteredExpenses =
     selectedCategory === "All"
       ? expenses
-      : expenses.filter(
-          (expense) =>
-            expense.category === selectedCategory
-        );
+      : expenses.filter((expense) => expense.category === selectedCategory);
 
   // =========================
   // MONTH FILTER
   // =========================
 
-  const monthFilteredExpenses = filteredExpenses.filter(
-    (expense) => {
-      if (selectedMonth === "") {
-        return true;
-      }
-
-      return expense.date.startsWith(selectedMonth);
+  const monthFilteredExpenses = filteredExpenses.filter((expense) => {
+    if (selectedMonth === "") {
+      return true;
     }
-  );
+
+    return expense.date.startsWith(selectedMonth);
+  });
 
   // =========================
   // SEARCH FILTER
   // =========================
 
-  const searchedExpenses = monthFilteredExpenses.filter(
-    (expense) => {
-      const search = searchTerm.toLowerCase();
+  const searchedExpenses = monthFilteredExpenses.filter((expense) => {
+    const search = searchTerm.toLowerCase();
 
-      return (
-        expense.title.toLowerCase().includes(search) ||
-        expense.category.toLowerCase().includes(search)
-      );
-    }
-  );
+    return (
+      expense.title.toLowerCase().includes(search) ||
+      expense.category.toLowerCase().includes(search)
+    );
+  });
 
   // =========================
   // SORT
   // =========================
 
-  const sortedExpenses = [...searchedExpenses].sort(
-    (a, b) => {
-      if (sortBy === "newest") {
-        return (
-          new Date(b.date).getTime() -
-          new Date(a.date).getTime()
-        );
-      }
-
-      if (sortBy === "oldest") {
-        return (
-          new Date(a.date).getTime() -
-          new Date(b.date).getTime()
-        );
-      }
-
-      if (sortBy === "higherAmt") {
-        return b.amount - a.amount;
-      }
-
-      if (sortBy === "lowerAmt") {
-        return a.amount - b.amount;
-      }
-
-      return 0;
+  const sortedExpenses = [...searchedExpenses].sort((a, b) => {
+    if (sortBy === "newest") {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
     }
-  );
+
+    if (sortBy === "oldest") {
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
+    }
+
+    if (sortBy === "higherAmt") {
+      return b.amount - a.amount;
+    }
+
+    if (sortBy === "lowerAmt") {
+      return a.amount - b.amount;
+    }
+
+    return 0;
+  });
 
   // =========================
   // CATEGORIES
@@ -155,24 +135,18 @@ function App() {
 
   const categories = [
     "All",
-    ...new Set(
-      expenses.map((expense) => expense.category)
-    ),
+    ...new Set(expenses.map((expense) => expense.category)),
   ];
 
   // =========================
   // SUMMARY
   // =========================
 
-  const totalExpenses = monthFilteredExpenses.reduce(
-    (sum, expense) => {
-      return sum + expense.amount;
-    },
-    0
-  );
+  const totalExpenses = monthFilteredExpenses.reduce((sum, expense) => {
+    return sum + expense.amount;
+  }, 0);
 
-  const totalTransactions =
-    monthFilteredExpenses.length;
+  const totalTransactions = monthFilteredExpenses.length;
 
   const averageExpense =
     monthFilteredExpenses.length === 0
@@ -184,10 +158,7 @@ function App() {
   // =========================
 
   useEffect(() => {
-    localStorage.setItem(
-      "expenses",
-      JSON.stringify(expenses)
-    );
+    localStorage.setItem("expenses", JSON.stringify(expenses));
   }, [expenses]);
 
   // =========================
@@ -207,37 +178,33 @@ function App() {
       setShowModal(false);
     }
   };
-   // =========================
-  // clear filter 
+  // =========================
+  // clear filter
   // =========================
   const clearFilters = () => {
-  setSearchTerm("");
-  setSelectedCategory("All");
-  setSelectedMonth("");
-};
-if(expenses.length===0){
-  clearFilters()
-}
+    setSearchTerm("");
+    setSelectedCategory("All");
+    setSelectedMonth("");
+  };
+  if (expenses.length === 0) {
+    clearFilters();
+  }
 
   // =========================
   // Stattics by category
   // =========================
- const categoryTotals = expenses.reduce(
-  (acc: Record<string, number>, expense) => {
-    if (!acc[expense.category]) {
-      acc[expense.category] = 0;
-    }
+  const categoryTotals = expenses.reduce(
+    (acc: Record<string, number>, expense) => {
+      if (!acc[expense.category]) {
+        acc[expense.category] = 0;
+      }
 
-    acc[expense.category] += expense.amount;
+      acc[expense.category] += expense.amount;
 
-    return acc;
-  },
-  {}
-);
-
-
-
-
+      return acc;
+    },
+    {},
+  );
 
   // =========================
   // UI
@@ -304,9 +271,7 @@ if(expenses.length===0){
 
       {/* TITLE */}
 
-      <h1 className="bg-pink-600">
-        Expense Tracker
-      </h1>
+      <h1 className="bg-pink-600">Expense Tracker</h1>
 
       {/* SEARCH */}
 
@@ -314,9 +279,7 @@ if(expenses.length===0){
         type="text"
         placeholder="Search"
         value={searchTerm}
-        onChange={(e) =>
-          setSearchTerm(e.target.value)
-        }
+        onChange={(e) => setSearchTerm(e.target.value)}
         className="border rounded p-1 mx-auto"
       />
 
@@ -325,23 +288,15 @@ if(expenses.length===0){
       <input
         type="month"
         value={selectedMonth}
-        onChange={(e) =>
-          setSelectedMonth(e.target.value)
-        }
+        onChange={(e) => setSelectedMonth(e.target.value)}
       />
 
       {/* SUMMARY CARDS */}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-4">
-        <SummaryCard
-          title="Total Transactions"
-          value={totalTransactions}
-        />
+        <SummaryCard title="Total Transactions" value={totalTransactions} />
 
-        <SummaryCard
-          title="Total Amount"
-          value={`₹${totalExpenses}`}
-        />
+        <SummaryCard title="Total Amount" value={`₹${totalExpenses}`} />
 
         <SummaryCard
           title="Average Expense"
@@ -349,6 +304,19 @@ if(expenses.length===0){
         />
       </div>
 
+      {/* Static category  */}
+
+      <div>
+        <h2>Category Summary</h2>
+
+        {Object.entries(categoryTotals).map(([category, total]) => (
+          <div key={category}>
+            {category}: ₹{total}
+          </div>
+        ))}
+      </div>
+
+      
       {/* FILTER + SORT */}
 
       <div className="category m-4 flex justify-between items-center">
@@ -357,15 +325,10 @@ if(expenses.length===0){
         <select
           className="p-2"
           value={selectedCategory}
-          onChange={(e) =>
-            setSelectedCategory(e.target.value)
-          }
+          onChange={(e) => setSelectedCategory(e.target.value)}
         >
           {categories.map((category) => (
-            <option
-              value={category}
-              key={category}
-            >
+            <option value={category} key={category}>
               {category}
             </option>
           ))}
@@ -373,27 +336,14 @@ if(expenses.length===0){
 
         {/* SORT */}
 
-        <select
-          value={sortBy}
-          onChange={(e) =>
-            setSortBy(e.target.value)
-          }
-        >
-          <option value="newest">
-            Newest
-          </option>
+        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+          <option value="newest">Newest</option>
 
-          <option value="oldest">
-            Oldest
-          </option>
+          <option value="oldest">Oldest</option>
 
-          <option value="higherAmt">
-            Higher Amount
-          </option>
+          <option value="higherAmt">Higher Amount</option>
 
-          <option value="lowerAmt">
-            Lower Amount
-          </option>
+          <option value="lowerAmt">Lower Amount</option>
         </select>
       </div>
 
