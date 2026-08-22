@@ -129,27 +129,55 @@ if (expenseToDelete) {
  
   return (
     <>
-    {showModel && expenseToDelete && (
-  <div className="fixed inset-0 flex flex-col items-center w justify-center  bg-opacity-50 z-50 bg-gray-800 text-white p-4 rounded w-1/2 m-auto h-1/2  ">
-    <h2 className="font-extrabold ">Delete Expense?</h2>
-
-    <p className="p-2 text-x">
-      Are you sure you want to delete "{expenseToDelete.title}"?
-    </p>
-
-    <button onClick={confirmDelete} className="bg-red-600 p-2 my-2 hover:bg-red-400">
-      Delete
-    </button>
-
-    <button
-      className="bg-blue-600 hover:bg-blue-400 p-2 my-2"
-      onClick={() => {
-        setShowModel(false);
-        setExpenseToDelete(null);
-      }}
+   {showModel && expenseToDelete && (
+  <div
+    className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+    onClick={() => {
+      setShowModel(false);
+      setExpenseToDelete(null);
+    }}
+  >
+    {/* Modal Box */}
+    <div
+      className="bg-white w-full max-w-md p-6 rounded-xl shadow-xl"
+      onClick={(e) => e.stopPropagation()}
     >
-      Cancel
-    </button>
+      {/* Heading */}
+      <h2 className="text-2xl font-bold text-gray-800 mb-3">
+        Delete Expense?
+      </h2>
+
+      {/* Message */}
+      <p className="text-gray-600 mb-6">
+        Are you sure you want to delete{" "}
+        <span className="font-bold text-gray-800">
+          "{expenseToDelete.title}"
+        </span>
+        ?
+      </p>
+
+      {/* Buttons */}
+      <div className="flex justify-end gap-3">
+        {/* Cancel */}
+        <button
+          onClick={() => {
+            setShowModel(false);
+            setExpenseToDelete(null);
+          }}
+          className="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300"
+        >
+          Cancel
+        </button>
+
+        {/* Confirm Delete */}
+        <button
+          onClick={confirmDelete}
+          className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
   </div>
 )}
 
