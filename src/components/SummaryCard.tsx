@@ -1,3 +1,5 @@
+import { deflate } from "zlib";
+
 type SummaryCardProps={
     title:string;
     value:string | number;
@@ -13,3 +15,4 @@ function SummaryCard({title,value}:SummaryCardProps){
         </>
     )
 }
+export deflate SummaryCard
