@@ -248,9 +248,9 @@ Copyright (c) [2026] [Anant kumar patel]
 
 ## Author
 
-**[Your Name]**
+**[Anant kumar patel]**
 
-- GitHub: [@your-username](https://github.com/Anant23452/Expense-tracker)
+- GitHub: [@Anant23452](https://github.com/Anant23452/Expense-tracker)
 
 
 ## Acknowledgements
