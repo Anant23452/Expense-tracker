@@ -112,6 +112,9 @@ function App() {
       return a.amount-b.amount;
     }
   })
+
+  //making model for delete 
+  
   return (
     <>
       <h1 className="bg-pink-600 ">Expense Tracker</h1>
