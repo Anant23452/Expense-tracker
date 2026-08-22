@@ -11,7 +11,7 @@ function ExpenseList({ expenses,deleteExpense,setEditExpense }: ExpenseListProps
      console.log("ExpenseList:", expenses);
      if(expenses.length === 0){
       return (
-        <div className="w-full max-w-4xl mx-auto p-4 bg-blue-300">
+        <div className="w-full max-w-4xl mx-auto p-4 ">
           <p className="text-center text-gray-600">No expenses to display.</p>
         </div>
       );
