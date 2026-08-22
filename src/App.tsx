@@ -190,6 +190,7 @@ if (expenseToDelete) {
         className="border-1 rounded p-1 mx-auto placeholder:text-gray-400 placeholder:text-sm placeholder:italic"
         />
       <div className="category m-4   flex justify-between items-center">
+        <span className="p-3 bg-orange-500 text-gray-800">Total Transaction:{totalTransaction}</span>
         <span className="p-3  bg-yellow-500 text-gray-800 ">
           Total Expenses: ₹{totalExpenses}
         </span>
