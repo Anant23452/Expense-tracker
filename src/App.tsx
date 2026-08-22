@@ -90,7 +90,7 @@ function App() {
   //search expenses
   const SearchedExpenses= filteredExpenses.filter((expense)=>{
    return(
-     expense.title.toLowerCase().includes(SearchTerm.toLowerCase())
+     expense.title.toLowerCase().includes(SearchTerm.toLowerCase()) ||
     expense.category.toLowerCase().includes(SearchTerm.toLowerCase())
    )
   })
