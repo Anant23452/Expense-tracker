@@ -8,15 +8,7 @@ type ExpenseCardProps = {
 };
 
 function ExpenseCard({ expense,deleteExpense,setEditExpense,askDelete }: ExpenseCardProps) {
-  const handleDelete= ()=>{
-    const confirmed = window.confirm(
-      "Are You sure You want to delete expense"
-
-    )
-    if(confirmed){
-      deleteExpense(expense.id);
-    }
-  }
+  
   return (
     <div className="group relative flex flex-col justify-between p-5 bg-white rounded-2xl border border-slate-500 shadow-sm  hover:shadow-md hover:border-slate-200 transition-all duration-200">
       {/* Top Header: Title & Category Badge */}
@@ -47,7 +39,7 @@ function ExpenseCard({ expense,deleteExpense,setEditExpense,askDelete }: Expense
       </div>
      <div className="carry-button flex  gap-2">
        <button 
-      onClick={handleDelete}
+      onClick={()=>askDelete(expense)}
       className="bg-red-400 hover:bg-red-500 text-gray-800 p-2      border-1 rounded"
       >Delete</button>
       <button 
