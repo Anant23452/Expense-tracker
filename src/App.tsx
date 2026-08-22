@@ -76,22 +76,7 @@ function App() {
     filteredExpenses.length === 0 ? 0 : totalAmount / filteredExpenses.length;
 
 
-//sort expenses
-  const SortedExpenses=[...filteredExpenses].sort((a,b)=>{
-    if(sortBy==="newest"){
-      return new Date(b.date).getDate()-new Date(a.date).getDate();
-    }
-    if(sortBy==="oldest"){
-      return new Date(a.date).getDate()- new Date(b.date).getDate();
-    }
-    if(sortBy==="higherAmt"){
-      return b.amount-a.amount;
 
-    }
-    if(sortBy==="lowerAmt"){
-      return a.amount-b.amount;
-    }
-  })
 
   //save  Expenses in localStorage;
   // when app started we load the stored data 
@@ -106,6 +91,22 @@ function App() {
   const SearchedExpenses= filteredExpenses.filter((expense)=>{
     expense.title.toLowerCase().includes(SearchTerm.toLowerCase())
     expense.category.toLowerCase().includes(SearchTerm.toLowerCase())
+  })
+  //sort expenses
+  const SortedExpenses=[...SearchedExpenses].sort((a,b)=>{
+    if(sortBy==="newest"){
+      return new Date(b.date).getDate()-new Date(a.date).getDate();
+    }
+    if(sortBy==="oldest"){
+      return new Date(a.date).getDate()- new Date(b.date).getDate();
+    }
+    if(sortBy==="higherAmt"){
+      return b.amount-a.amount;
+
+    }
+    if(sortBy==="lowerAmt"){
+      return a.amount-b.amount;
+    }
   })
   return (
     <>
