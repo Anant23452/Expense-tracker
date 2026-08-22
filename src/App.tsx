@@ -304,7 +304,7 @@ function App() {
 
       {/* Static category  */}
 
-      <div>
+      <div className="flex gap-4 justify-center items-center">
         <h2>Category Summary</h2>
 
         {Object.entries(categoryTotals).map(([category, total]) => (
