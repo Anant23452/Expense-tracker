@@ -9,6 +9,14 @@ type ExpenseListProps = {
 
 function ExpenseList({ expenses,deleteExpense,setEditExpense }: ExpenseListProps) {
      console.log("ExpenseList:", expenses);
+     if(expenses.length === 0){
+      return (
+        <div className="w-full max-w-4xl mx-auto p-4 bg-blue-300">
+          <p className="text-center text-gray-600">No expenses to display.</p>
+        </div>
+      );
+    }
+
   return (
    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl mx-auto p-4 bg-blue-300">
       {expenses.map((expense) => (
