@@ -207,7 +207,47 @@ function App() {
       setShowModal(false);
     }
   };
+   // =========================
+  // clear filter 
+  // =========================
+  const clearFilters = () => {
+  setSearchTerm("");
+  setSelectedCategory("All");
+  setSelectedMonth("");
+};
+if(expenses.length===0){
+  clearFilters()
+}
 
+  // =========================
+  // Stattics by category
+  // =========================
+ const categoryTotals = expenses.reduce(
+  (acc: Record<string, number>, expense) => {
+    if (!acc[expense.category]) {
+      acc[expense.category] = 0;
+    }
+
+    acc[expense.category] += expense.amount;
+
+    return acc;
+  },
+  {}
+);
+
+
+
+
+
+  // =========================
+  // UI
+  // =========================
+  // =========================
+  // UI
+  // =========================
+  // =========================
+  // UI
+  // =========================
   // =========================
   // UI
   // =========================
