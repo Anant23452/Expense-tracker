@@ -26,6 +26,7 @@ function App() {
   const [SearchTerm,setSearchTerm]=useState("");
   const[showModel,setShowModel]=useState(false);
   const[expenseToDelete,setExpenseToDelete]=useState<Expense|null>(null);
+  const[selectedMonth,setSelectedMonth]=useState("");
   //  callback functin
 
   // add expensese
