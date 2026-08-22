@@ -127,15 +127,7 @@ if (expenseToDelete) {
     setShowModel(false);
   }
   }
-  //filter by month 
-  const filterByMonth = (expense: Expense) => {
-  if (selectedMonth === "") {
-    return true;
-  }
-
-  return expense.date.startsWith(selectedMonth);
-};
-const monthFilteredExpenses = filteredExpenses.filter(filterByMonth);
+  
   
   
  
@@ -228,7 +220,7 @@ const monthFilteredExpenses = filteredExpenses.filter(filterByMonth);
         </select>
         {/* making second  dropdown with controlled select
          */}
-         <input type="month" value = {selectedMonth} onChange={(e)=>setSelectedMonth(e.target.value)} />
+       
 
         <select
           name=""
