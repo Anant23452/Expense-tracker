@@ -127,6 +127,15 @@ if (expenseToDelete) {
     setShowModel(false);
   }
   }
+  //filter by month 
+  const filterByMonth = (expense: Expense) => {
+  if (selectedMonth === "") {
+    return true;
+  }
+
+  return expense.date.startsWith(selectedMonth);
+};
+const monthFilteredExpenses = filteredExpenses.filter(filterByMonth);
   
   
  
