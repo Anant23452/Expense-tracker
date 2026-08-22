@@ -242,6 +242,7 @@ if (expenseToDelete) {
         deleteExpense={deleteExpense}
         setEditExpense={setEditExpense}
         askDelete={askDelete}
+        SearchTerm={SearchTerm}
       />
     </>
   );
