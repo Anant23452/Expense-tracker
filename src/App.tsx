@@ -130,18 +130,19 @@ if (expenseToDelete) {
   return (
     <>
     {showModel && expenseToDelete && (
-  <div>
-    <h2>Delete Expense?</h2>
+  <div className="fixed inset-0 flex flex-col items-center w justify-center  bg-opacity-50 z-50 bg-gray-800 text-white p-4 rounded w-1/2 m-auto h-1/2  ">
+    <h2 className="font-extrabold ">Delete Expense?</h2>
 
-    <p>
+    <p className="p-2 text-x">
       Are you sure you want to delete "{expenseToDelete.title}"?
     </p>
 
-    <button onClick={confirmDelete}>
+    <button onClick={confirmDelete} className="bg-red-600 p-2 my-2 hover:bg-red-400">
       Delete
     </button>
 
     <button
+      className="bg-blue-600 hover:bg-blue-400 p-2 my-2"
       onClick={() => {
         setShowModel(false);
         setExpenseToDelete(null);
