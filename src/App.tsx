@@ -139,7 +139,7 @@ if (expenseToDelete) {
   >
     {/* Modal Box */}
     <div
-      className="bg-white w-full max-w-md p-6 rounded-xl shadow-xl"
+      className="bg-gray-300 w-full max-w-md p-6 rounded-xl shadow-xl"
       onClick={(e) => e.stopPropagation()}
     >
       {/* Heading */}
