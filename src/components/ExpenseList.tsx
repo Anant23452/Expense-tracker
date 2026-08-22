@@ -26,6 +26,7 @@ function ExpenseList({ expenses,deleteExpense,setEditExpense,askDelete }: Expens
          expense={expense}
            deleteExpense={deleteExpense}
            setEditExpense={setEditExpense}
+           askDelete={askDelete}
           />
       ))}
     </div>
