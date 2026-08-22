@@ -65,7 +65,7 @@ This project pairs quick expense entry with a clean analysis layer. It keeps the
 
 Add real images after deployment so visitors can understand the project before opening it.
 
-![Dashboard](./public/screenshots/dashboard.png)
+![Dashboard](.public/screenshots/analytics.png.png)
 
 ### How to add screenshots
 
