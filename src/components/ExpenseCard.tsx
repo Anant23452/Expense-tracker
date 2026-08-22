@@ -46,11 +46,11 @@ function ExpenseCard({ expense,deleteExpense,setEditExpense }: ExpenseCardProps)
       </div>
      <div className="carry-button flex  gap-2">
        <button 
-      onClick={() => deleteExpense(expense.id)}
+      onClick={handleDelete}
       className="bg-red-400 hover:bg-red-500 text-gray-800 p-2      border-1 rounded"
       >Delete</button>
       <button 
-     onClick={handleDelete}
+     onClick={() => setEditExpense(expense)}
       className="bg-red-400 hover:bg-red-500 text-gray-800 p-2      border-1 rounded"
       >Edit</button>
      </div>
