@@ -114,7 +114,10 @@ function App() {
   })
 
   //making model for delete 
-  
+  const askDelete= (expense:Expense)=>{
+    setExpenseToDelete(expense);
+    setShowModel(true);
+  }
   return (
     <>
       <h1 className="bg-pink-600 ">Expense Tracker</h1>
