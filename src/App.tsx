@@ -4,6 +4,7 @@ import type { Expense } from "./types/expense";
 import "./App.css";
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
+import SummaryCard from "./components/SummaryCard";
 
 function App() {
   const [expenses, setExpenses] = useState<Expense[]>(() => {
