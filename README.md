@@ -86,7 +86,7 @@ Suggested screenshot Markdown:
 
 **Demo:** [Add your deployed URL here](https://your-live-demo-url.example.com)
 
-**Repository:** [Add your GitHub repository URL here](https://github.com/your-username/expense-tracker)
+**Repository:** [Add your GitHub repository URL here](https://github.com/Anant23452/Expense-tracker)
 
 ## Tech Stack
 
@@ -158,7 +158,7 @@ public/
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/expense-tracker.git
+git clone https://github.com/Anant23452/Expense-tracker
 cd expense-tracker
 npm install
 npm run dev
@@ -203,15 +203,7 @@ If your `package.json` uses different script names, use the commands defined the
 
 > Accessibility and responsive behavior should be verified in the deployed interface before making specific compliance claims. If you extend the project, consider keyboard focus states, semantic labels, contrast checks, and small-screen testing as part of every UI change.
 
-## Project Journey
 
-One of the key lessons in this project was understanding why state updates must not happen during rendering. A pattern like this creates a render loop:
-
-```tsx
-if (expenses.length === 0) {
-  clearFilters(); // Avoid: updates state while rendering
-}
-```
 
 The fix is to keep rendering free of side effects and handle state changes through events or carefully scoped effects when needed. This reinforced the central design of the app: state flows down, derived values are calculated predictably, and the UI renders from those values.
 
@@ -248,21 +240,18 @@ Contributions, ideas, and bug reports are welcome.
 
 Please keep contributions aligned with the project's current front-end learning scope.
 
-## License
 
-Add a license before publishing. A common choice for portfolio projects is the [MIT License](https://choosealicense.com/licenses/mit/).
 
 ```text
-Copyright (c) [Year] [Your Name]
+Copyright (c) [2026] [Anant kumar patel]
 ```
 
 ## Author
 
 **[Your Name]**
 
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [Your LinkedIn profile](https://www.linkedin.com/in/your-profile)
-- Portfolio: [your-portfolio-url.example.com](https://your-portfolio-url.example.com)
+- GitHub: [@your-username](https://github.com/Anant23452/Expense-tracker)
+
 
 ## Acknowledgements
 
