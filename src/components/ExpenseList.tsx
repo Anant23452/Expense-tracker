@@ -6,6 +6,7 @@ type ExpenseListProps = {
   deleteExpense:(id:number)=>void;
   setEditExpense:(expense:Expense)=>void
   askDelete:(expense:Expense)=>void
+  searchTerm:string
 };
 
 function ExpenseList({ expenses,deleteExpense,setEditExpense,askDelete }: ExpenseListProps) {
