@@ -15,4 +15,4 @@ function SummaryCard({title,value}:SummaryCardProps){
         </>
     )
 }
-export deflate SummaryCard
+export default SummaryCard
