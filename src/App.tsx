@@ -38,7 +38,7 @@ function App() {
   }, [expenses]);
 
   // delete  expense
-  const deleteExpense = (id: Number) => {
+  const deleteExpense = (id:number) => {
     setExpenses((prev) => prev.filter((expense) => expense.id !== id));
   };
 
@@ -66,39 +66,7 @@ function App() {
 
   
 
-  const monthFilteredExpenses = filteredExpenses.filter((expense) => {
-  if (selectedMonth === "") {
-    return true;
-  }
-
-  return expense.date.startsWith(selectedMonth);
-});
-
-   
-   //search expenses
-  const SearchedExpenses = monthFilteredExpenses.filter((expense) => {
-    return (
-      expense.title.toLowerCase().includes(SearchTerm.toLowerCase()) ||
-      expense.category.toLowerCase().includes(SearchTerm.toLowerCase())
-    );
-  });
-
-
-  //sort expenses
-  const SortedExpenses = [...SearchedExpenses].sort((a, b) => {
-    if (sortBy === "newest") {
-      return new Date(b.date).getDate() - new Date(a.date).getDate();
-    }
-    if (sortBy === "oldest") {
-      return new Date(a.date).getDate() - new Date(b.date).getDate();
-    }
-    if (sortBy === "higherAmt") {
-      return b.amount - a.amount;
-    }
-    if (sortBy === "lowerAmt") {
-      return a.amount - b.amount;
-    }
-  });
+  
   //use of set
   const categories = [
     "All",
@@ -122,7 +90,28 @@ function App() {
     localStorage.setItem("expenses", JSON.stringify(expenses));
   }, [expenses]);
 
- 
+  //search expenses
+  const SearchedExpenses = filteredExpenses.filter((expense) => {
+    return (
+      expense.title.toLowerCase().includes(SearchTerm.toLowerCase()) ||
+      expense.category.toLowerCase().includes(SearchTerm.toLowerCase())
+    );
+  });
+  //sort expenses
+  const SortedExpenses = [...SearchedExpenses].sort((a, b) => {
+    if (sortBy === "newest") {
+      return new Date(b.date).getDate() - new Date(a.date).getDate();
+    }
+    if (sortBy === "oldest") {
+      return new Date(a.date).getDate() - new Date(b.date).getDate();
+    }
+    if (sortBy === "higherAmt") {
+      return b.amount - a.amount;
+    }
+    if (sortBy === "lowerAmt") {
+      return a.amount - b.amount;
+    }
+  });
 
   //making model for delete
   const askDelete = (expense: Expense) => {
