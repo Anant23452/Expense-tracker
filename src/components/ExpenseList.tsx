@@ -5,9 +5,10 @@ type ExpenseListProps = {
   expenses: Expense[];
   deleteExpense:(id:number)=>void;
   setEditExpense:(expense:Expense)=>void
+  askDelete:(expense:Expense)=>void
 };
 
-function ExpenseList({ expenses,deleteExpense,setEditExpense }: ExpenseListProps) {
+function ExpenseList({ expenses,deleteExpense,setEditExpense,askDelete }: ExpenseListProps) {
      console.log("ExpenseList:", expenses);
      if(expenses.length === 0){
       return (
