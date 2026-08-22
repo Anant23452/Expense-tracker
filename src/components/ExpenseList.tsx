@@ -6,7 +6,7 @@ type ExpenseListProps = {
   deleteExpense:(id:number)=>void;
   setEditExpense:(expense:Expense)=>void
   askDelete:(expense:Expense)=>void
-  SearchTerm:string
+  searchTerm:string
 };
 
 function ExpenseList(
@@ -14,16 +14,16 @@ function ExpenseList(
     deleteExpense,
     setEditExpense,
     askDelete,
-    SearchTerm 
+    searchTerm 
   }: ExpenseListProps) {
      console.log("ExpenseList:", expenses);
      //1st message 
 
-     if(SearchTerm.trim()!=="" && expenses.length===0){
+     if(searchTerm.trim()!=="" && expenses.length===0){
       return (
         <div className="w-full max-w-4xl mx-auto p-1">
           <p className="text-center text-xl">
-            NO expense for "{SearchTerm}" found.
+            NO expense for "{searchTerm}" found.
           </p>
         </div>
       )
