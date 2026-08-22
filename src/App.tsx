@@ -186,9 +186,7 @@ function App() {
     setSelectedCategory("All");
     setSelectedMonth("");
   };
-  if (expenses.length === 0) {
-    clearFilters();
-  }
+
 
   // =========================
   // Stattics by category
@@ -316,7 +314,7 @@ function App() {
         ))}
       </div>
 
-      
+
       {/* FILTER + SORT */}
 
       <div className="category m-4 flex justify-between items-center">
