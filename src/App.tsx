@@ -118,8 +118,12 @@ function App() {
     setExpenseToDelete(expense);
     setShowModel(true);
   }
-  const confirmTodDelete=()=>{
-
+  const confirmDelete=()=>{
+if (expenseToDelete) {
+    deleteExpense(expenseToDelete.id);
+    setExpenseToDelete(null);
+    setShowModel(false);
+  }
   }
   
  
