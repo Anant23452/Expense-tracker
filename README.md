@@ -27,39 +27,8 @@ Expense Tracker is a front-end personal finance dashboard built to make day-to-d
 
 All data stays in the browser through `localStorage`, so the app works without a backend, account, database, or external API.
 
-## The Idea
 
-### The problem
 
-Expense notes often end up scattered across memory, messages, or unfinished spreadsheets. Even when transactions are recorded, it can still be difficult to answer simple questions: *What did I spend the most on? How much did I spend this month? Which category is growing?*
-
-### The solution
-
-This project pairs quick expense entry with a clean analysis layer. It keeps the interaction simple while deriving summaries, category totals, percentages, visual spending bars, filters, search results, and sorting from one reliable source of truth.
-
-## Features
-
-### Expense management
-
-- Create expenses with a title, amount, category, and date.
-- Edit saved expenses when details change.
-- Delete transactions only after confirming the action in a modal.
-- Keep records after refreshing or reopening the browser with `localStorage`.
-
-### Find what matters
-
-- Search expenses by title or category.
-- Filter transactions by category.
-- Narrow the view to a selected month.
-- Sort by newest, oldest, highest amount, or lowest amount.
-- Receive clear empty states when there are no matching expenses.
-
-### See the story behind the list
-
-- View summary cards for total transactions, total spending, and average expense.
-- Compare category totals at a glance.
-- See each category's share of spending as a percentage.
-- Use visual category bars to spot the largest spending areas quickly.
 
 ## Screenshots
 
@@ -166,34 +135,8 @@ npm run preview   # Preview the production build locally
 
 If your `package.json` uses different script names, use the commands defined there.
 
-## Using the App
-
-1. Add a title, amount, category, and date, then save the expense.
-2. Review the summary cards for your transaction count, total, and average.
-3. Use search, category, and month controls to focus the list.
-4. Change the sort order to inspect recent or high-value expenses.
-5. Edit an item to correct it, or delete it after reviewing the confirmation modal.
-6. Check the category section to understand where your spending is concentrated.
-
-## Thoughtful States and Edge Cases
-
-- A fresh browser starts with an empty expense list rather than failing on missing saved data.
-- Empty search/filter results are handled with a clear empty state.
-- Summary values are derived safely even when there are no expenses.
-- Deletion requires a confirmation step to reduce accidental loss.
-- Persisted records remain available after page refreshes in the same browser.
-
-## Interface Notes
-
-- Tailwind CSS supports a consistent, utility-first layout and visual hierarchy.
-- Summary cards and category bars make numeric data easier to scan than a transaction list alone.
-- Search, filters, and sorting make larger lists manageable without leaving the dashboard.
-
-> Accessibility and responsive behavior should be verified in the deployed interface before making specific compliance claims. If you extend the project, consider keyboard focus states, semantic labels, contrast checks, and small-screen testing as part of every UI change.
 
 
-
-The fix is to keep rendering free of side effects and handle state changes through events or carefully scoped effects when needed. This reinforced the central design of the app: state flows down, derived values are calculated predictably, and the UI renders from those values.
 
 ## Future Improvements
 
@@ -206,27 +149,8 @@ These are intentionally not part of the current project scope:
 - Add a theme preference, including dark mode.
 - Evolve the app into a full-stack version after adding backend skills.
 
-## Deployment
 
-This project can be deployed as a static front-end application on platforms such as Vercel, Netlify, or GitHub Pages.
 
-1. Run `npm run build` locally to confirm the production build succeeds.
-2. Import the GitHub repository into your hosting provider.
-3. Use the platform's standard Node build settings.
-4. Add the deployed URL to the [Live Demo](#live-demo) section.
-
-Because this project uses browser `localStorage`, each browser/device maintains its own saved expense data. Data is not shared or synced between devices.
-
-## Contributing
-
-Contributions, ideas, and bug reports are welcome.
-
-1. Fork the project.
-2. Create a branch: `git checkout -b feature/your-feature`.
-3. Make a focused change and update documentation where helpful.
-4. Open a pull request describing the problem and solution.
-
-Please keep contributions aligned with the project's current front-end learning scope.
 
 
 
