@@ -89,8 +89,10 @@ function App() {
 
   //search expenses
   const SearchedExpenses= filteredExpenses.filter((expense)=>{
-    expense.title.toLowerCase().includes(SearchTerm.toLowerCase())
+   return(
+     expense.title.toLowerCase().includes(SearchTerm.toLowerCase())
     expense.category.toLowerCase().includes(SearchTerm.toLowerCase())
+   )
   })
   //sort expenses
   const SortedExpenses=[...SearchedExpenses].sort((a,b)=>{
