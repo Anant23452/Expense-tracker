@@ -4,9 +4,10 @@ type ExpenseCardProps = {
   expense: Expense;
   deleteExpense:(id:number)=>void
   setEditExpense:(expense:Expense)=>void
+  askDelete:(expense:Expense)=>void
 };
 
-function ExpenseCard({ expense,deleteExpense,setEditExpense }: ExpenseCardProps) {
+function ExpenseCard({ expense,deleteExpense,setEditExpense,askDelete }: ExpenseCardProps) {
   const handleDelete= ()=>{
     const confirmed = window.confirm(
       "Are You sure You want to delete expense"
