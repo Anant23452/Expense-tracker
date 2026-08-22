@@ -174,6 +174,7 @@ function App() {
         expenses={SortedExpenses}
         deleteExpense={deleteExpense}
         setEditExpense={setEditExpense}
+        askDelete={askDelete}
       />
     </>
   );
