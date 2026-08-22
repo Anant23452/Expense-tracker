@@ -43,7 +43,7 @@ Add real images after deployment so visitors can understand the project before o
 
 **Demo:** [Add your deployed URL here](https://your-live-demo-url.example.com)
 
-**Repository:** [Add your GitHub repository URL here](https://github.com/Anant23452/Expense-tracker)
+**Repository:** [Live link ](https://github.com/Anant23452/Expense-tracker)
 
 ## Tech Stack
 
