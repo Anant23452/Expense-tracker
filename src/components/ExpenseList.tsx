@@ -9,7 +9,13 @@ type ExpenseListProps = {
   searchTerm:string
 };
 
-function ExpenseList({ expenses,deleteExpense,setEditExpense,askDelete }: ExpenseListProps) {
+function ExpenseList(
+  { expenses,
+    deleteExpense,
+    setEditExpense,
+    askDelete,
+    searchTerm 
+  }: ExpenseListProps) {
      console.log("ExpenseList:", expenses);
      if(expenses.length === 0){
       return (
