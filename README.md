@@ -65,20 +65,10 @@ This project pairs quick expense entry with a clean analysis layer. It keeps the
 
 Add real images after deployment so visitors can understand the project before opening it.
 
-![Dashboard](.public/screenshots/analytics.png.png)
+![Dashboard](public/screenshots/dashboard.png.png)
+![Dashboard](public/screenshots/filters.png.png)
+![Dashboard](public/screenshots/analytics.png.png)
 
-### How to add screenshots
-
-1. Create `public/screenshots/` in the project.
-2. Capture the dashboard, a filtered/search result, and the category summary.
-3. Save them as `dashboard.png`, `filters.png`, and `analytics.png`.
-4. Replace the code-style placeholders in the table above with the actual image Markdown.
-
-Suggested screenshot Markdown:
-
-```md
-![Expense Tracker dashboard](./public/screenshots/dashboard.png)
-```
 
 ## Live Demo
 
