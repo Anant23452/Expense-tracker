@@ -205,7 +205,8 @@ function App() {
   );
 
   // =========================
-  // UI
+  // max amount of category static
+  const maxAmount = Math.max(...Object.values(categoryTotals));
   // =========================
   // =========================
   // UI
@@ -304,14 +305,14 @@ function App() {
 
       {/* Static category Summary */}
 
-      <div className="flex gap-4 justify-center items-center">
+      <div className="">
         <h2>Category Summary</h2>
 
        {Object.entries(categoryTotals).map(([category, total]) => {
-  const width = (total / totalExpenses) * 100;
+  const width = (total / maxAmount) * 100;
 
   return (
-    <div key={category}>
+    <div key={category} className="flex gap-4 justify-center items-center m-auto w-1/2">
       <p>{category}: ₹{total}</p>
 
       <div className="w-full bg-gray-200 h-4 rounded">
