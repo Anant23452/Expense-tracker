@@ -12,7 +12,7 @@ function ExpenseList({ expenses,deleteExpense,setEditExpense }: ExpenseListProps
      if(expenses.length === 0){
       return (
         <div className="w-full max-w-4xl mx-auto p-4 ">
-          <p className="text-center text-gray-400 bold">No expenses to display.</p>
+          <p className="text-center text-gray-400 text-xl">No expenses to display.</p>
         </div>
       );
     }
