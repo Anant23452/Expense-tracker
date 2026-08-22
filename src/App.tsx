@@ -217,6 +217,7 @@ if (expenseToDelete) {
         </select>
         {/* making second  dropdown with controlled select
          */}
+         <input type="month" value = {selectedMonth} onChange={(e)=>setSelectedMonth(e.target.value)} />
 
         <select
           name=""
