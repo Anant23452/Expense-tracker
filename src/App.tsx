@@ -190,6 +190,22 @@ if (expenseToDelete) {
        onChange={(e)=>setSearchTerm(e.target.value)}
         className="border-1 rounded p-1 mx-auto placeholder:text-gray-400 placeholder:text-sm placeholder:italic"
         />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-4">
+  <SummaryCard
+    title="Total Transactions"
+    value={totalTransaction}
+  />
+
+  <SummaryCard
+    title="Total Amount"
+    value={`₹${totalExpenses}`}
+  />
+
+  <SummaryCard
+    title="Average Expense"
+    value={`₹${averageExpense.toFixed(2)}`}
+  />
+</div>
         
       <ExpenseForm
         addExpense={addExpense}
