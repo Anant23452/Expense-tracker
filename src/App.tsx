@@ -112,10 +112,10 @@ function App() {
       <h1 className="bg-pink-600 ">Expense Tracker</h1>
       <input
        type="text" 
-       placeholder="search"
+       placeholder="Search"
        value={SearchTerm}
        onChange={(e)=>setSearchTerm(e.target.value)}
-        className="border-1 rounded p-1 "
+        className="border-1 rounded p-1 mx-auto "
         />
       <div className="category m-4   flex justify-between items-center">
         <span className="p-3  bg-yellow-500 text-gray-800 ">
