@@ -22,6 +22,7 @@ function App() {
   const [editingExpense, setEditExpense] = useState<Expense | null>(null);
   const [selectedCategory, setselectedCategory] = useState("All");
   const [sortBy, setSortBy] = useState("newest");
+  const [SearchTerm,setSearchTerm]=useState("");
   //  callback functin
 
   // add expensese
@@ -99,9 +100,23 @@ function App() {
   useEffect(()=>{
     localStorage.setItem("expenses",JSON.stringify(expenses))
   },[expenses]);
+
+
+  //search expenses
+  const SearchedExpenses= filteredExpenses.filter((expense)=>{
+    expense.title.toLowerCase().includes(SearchTerm.toLowerCase())
+    expense.category.toLowerCase().includes(SearchTerm.toLowerCase())
+  })
   return (
     <>
       <h1 className="bg-pink-600 ">Expense Tracker</h1>
+      <input
+       type="text" 
+       placeholder="search"
+       value={SearchTerm}
+       onChange={(e)=>setSearchTerm(e.target.value)}
+        className="border-1 rounded p-1 "
+        />
       <div className="category m-4   flex justify-between items-center">
         <span className="p-3  bg-yellow-500 text-gray-800 ">
           Total Expenses: ₹{totalExpenses}
