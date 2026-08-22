@@ -118,8 +118,36 @@ function App() {
     setExpenseToDelete(expense);
     setShowModel(true);
   }
+  const confirmTodDelete=()=>{
+
+  }
+  
+ 
   return (
     <>
+    {showModel && expenseToDelete && (
+  <div>
+    <h2>Delete Expense?</h2>
+
+    <p>
+      Are you sure you want to delete "{expenseToDelete.title}"?
+    </p>
+
+    <button onClick={confirmDelete}>
+      Delete
+    </button>
+
+    <button
+      onClick={() => {
+        setShowModel(false);
+        setExpenseToDelete(null);
+      }}
+    >
+      Cancel
+    </button>
+  </div>
+)}
+
       <h1 className="bg-pink-600 ">Expense Tracker</h1>
       <input
        type="text" 
