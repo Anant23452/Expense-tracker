@@ -23,6 +23,8 @@ function App() {
   const [selectedCategory, setselectedCategory] = useState("All");
   const [sortBy, setSortBy] = useState("newest");
   const [SearchTerm,setSearchTerm]=useState("");
+  const[showModel,setShowModel]=useState(false);
+  const[expenseToDelete,setExpenseToDelete]=useState<Expense|null>(null);
   //  callback functin
 
   // add expensese
